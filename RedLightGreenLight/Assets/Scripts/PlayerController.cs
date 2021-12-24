@@ -4,9 +4,13 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public Transform playerCam = null;
+
+    public Light flashlight = null;
+
     CharacterController controller = null;
 
-    public Transform playerCam = null;
+    Rigidbody rb;
 
     float ogCamPosY;
 
@@ -14,6 +18,8 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
+        rb = GetComponent<Rigidbody>();
+
         ogCamPosY = playerCam.localPosition.y;
 
         controller = GetComponent<CharacterController>();
@@ -55,6 +61,9 @@ public class PlayerController : MonoBehaviour
         xRotation = Mathf.Clamp(xRotation, -90f, 90f);
         playerCam.localEulerAngles = Vector3.right * xRotation;
         transform.Rotate(Vector3.up * currMouseDel.x * mouseSensitivity);
+
+        flashlight.transform.Rotate(Vector3.up * -currMouseDel.x * mouseSensitivity);
+        
     }
 
 
@@ -71,12 +80,13 @@ public class PlayerController : MonoBehaviour
     [Range(0f, 0.5f)] float mouseSmoothTime = 0.05f;
     float walkSpeed = 4f;
     float sprintSpeed = 7.5f;
+    float jumpHeight = 3f;
+    float jumpForce;
     float gravity = -25f;
     float downwardVel = 0f;
 
     Vector2 currDir = Vector2.zero;
     Vector2 currVel = Vector2.zero;
-    Vector2 currInput = Vector2.zero;
 
     bool isMoving;
     // ================================================
@@ -92,9 +102,19 @@ public class PlayerController : MonoBehaviour
             downwardVel = 0;
         }
 
-        downwardVel += gravity * Time.deltaTime;
+        // Walking
+        Vector3 vel = (transform.forward * currDir.y + transform.right * currDir.x) * (isSprinting ? sprintSpeed : walkSpeed) + 
+            (Vector3.up * downwardVel);
 
-        Vector3 vel = (transform.forward * currDir.y + transform.right * currDir.x) * (isSprinting ? sprintSpeed : walkSpeed) + (Vector3.up * downwardVel);
+        // Jumping
+        if (Input.GetKeyDown(KeyCode.Space) && controller.isGrounded)
+        {
+            vel.y = Mathf.Sqrt(jumpHeight * -2 * gravity);
+            //rb.AddForce(new Vector3(0, jumpForce, 0), ForceMode.Impulse);
+        }
+
+        // Free-fall Gravity
+        downwardVel += gravity * Time.deltaTime;
         controller.Move(vel * Time.deltaTime);
 
         if (Mathf.Abs(vel.x) > 0.1f || Mathf.Abs(vel.z) > 0.1f)

@@ -518,9 +518,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerCam: {fileID: 963194228}
+  flashlight: {fileID: 308771700}
   mouseSensitivity: 4
   bobWalkSpeed: 10
-  bobSprintSpeed: 16
+  bobSprintSpeed: 18
   bobWalkAmount: 0.045
   bobSprintAmount: 0.065
 --- !u!54 &205737841

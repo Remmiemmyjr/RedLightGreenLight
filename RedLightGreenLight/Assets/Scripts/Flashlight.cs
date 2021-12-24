@@ -6,7 +6,7 @@ public class Flashlight : MonoBehaviour
 {
     public Light flashlight;
     public Transform camPos;
-    float followSpeed = 6.5f;
+    float followSpeed = 14f;
 
     void Start()
     {
