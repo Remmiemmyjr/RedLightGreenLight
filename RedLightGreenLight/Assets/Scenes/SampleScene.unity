@@ -129,7 +129,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh15742
+  m_Name: pb_Mesh15748
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -293,7 +293,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh15756
+  m_Name: pb_Mesh15762
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -520,8 +520,8 @@ MonoBehaviour:
   playerCam: {fileID: 963194228}
   flashlight: {fileID: 308771700}
   mouseSensitivity: 4
-  bobWalkSpeed: 10
-  bobSprintSpeed: 18
+  bobWalkSpeed: 15
+  bobSprintSpeed: 25
   bobWalkAmount: 0.045
   bobSprintAmount: 0.065
 --- !u!54 &205737841
@@ -597,7 +597,7 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 0.6698113, g: 0.45812565, b: 0.45812565, a: 1}
-  m_Intensity: 1.5
+  m_Intensity: 1.53
   m_Range: 45
   m_SpotAngle: 50
   m_InnerSpotAngle: 1
@@ -629,7 +629,7 @@ Light:
       e33: 1
     m_UseCullingMatrixOverride: 0
   m_Cookie: {fileID: 2800000, guid: ae38ca6297af3de419d15b26b9335883, type: 3}
-  m_DrawHalo: 1
+  m_DrawHalo: 0
   m_Flare: {fileID: 0}
   m_RenderMode: 0
   m_CullingMask:
@@ -653,7 +653,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh15674
+  m_Name: pb_Mesh15680
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1743,7 +1743,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh15726
+  m_Name: pb_Mesh15732
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1907,7 +1907,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh15780
+  m_Name: pb_Mesh15786
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -6043,7 +6043,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh15690
+  m_Name: pb_Mesh15696
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -6207,7 +6207,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh15768
+  m_Name: pb_Mesh15774
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -6848,7 +6848,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh15710
+  m_Name: pb_Mesh15716
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
