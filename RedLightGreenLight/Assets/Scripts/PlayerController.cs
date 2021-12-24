@@ -38,7 +38,10 @@ public class PlayerController : MonoBehaviour
 
 
     // MOUSE LOOK VARIABLES ===========================
+    [Range(0f, 0.5f)] float moveSmoothTime = 0.15f;
+    public float mouseSensitivity = 4f;
     float xRotation;
+
     Vector2 currMouseDel = Vector2.zero;
     Vector2 currMouseVel = Vector2.zero;
     // ================================================
@@ -65,9 +68,6 @@ public class PlayerController : MonoBehaviour
 
 
     // PLAYER MOVEMENT VARIABLES ======================
-    public float mouseSensitivity = 4f;
-
-    [Range(0f, 0.5f)] float moveSmoothTime = 0.15f;
     [Range(0f, 0.5f)] float mouseSmoothTime = 0.05f;
     float walkSpeed = 4f;
     float sprintSpeed = 7.5f;

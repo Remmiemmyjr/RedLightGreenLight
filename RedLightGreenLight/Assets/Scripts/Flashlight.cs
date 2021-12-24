@@ -6,7 +6,7 @@ public class Flashlight : MonoBehaviour
 {
     public Light flashlight;
     public Transform camPos;
-    //float followSpeed = 0.01f;
+    float followSpeed = 5.5f;
 
     void Start()
     {
@@ -19,10 +19,10 @@ public class Flashlight : MonoBehaviour
         {
             flashlight.enabled = !flashlight.enabled;
         }
-        //if(flashlight.enabled)
-        //{
-        //    flashlight.transform.localRotation = Quaternion.Slerp(flashlight.transform.localRotation, 
-        //        camPos.transform.localRotation, followSpeed * Time.deltaTime);
-        //}
+        if (flashlight.enabled)
+        {
+            flashlight.transform.localRotation = Quaternion.Slerp(flashlight.transform.localRotation,
+                camPos.transform.localRotation, followSpeed * Time.deltaTime);
+        }
     }
 }
