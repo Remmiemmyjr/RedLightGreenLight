@@ -80,8 +80,6 @@ public class PlayerController : MonoBehaviour
     [Range(0f, 0.5f)] float mouseSmoothTime = 0.05f;
     float walkSpeed = 4f;
     float sprintSpeed = 7.5f;
-    float jumpHeight = 3f;
-    float jumpForce;
     float gravity = -25f;
     float downwardVel = 0f;
 
@@ -105,13 +103,6 @@ public class PlayerController : MonoBehaviour
         // Walking
         Vector3 vel = (transform.forward * currDir.y + transform.right * currDir.x) * (isSprinting ? sprintSpeed : walkSpeed) + 
             (Vector3.up * downwardVel);
-
-        // Jumping
-        if (Input.GetKeyDown(KeyCode.Space) && controller.isGrounded)
-        {
-            vel.y = Mathf.Sqrt(jumpHeight * -2 * gravity);
-            //rb.AddForce(new Vector3(0, jumpForce, 0), ForceMode.Impulse);
-        }
 
         // Free-fall Gravity
         downwardVel += gravity * Time.deltaTime;
